@@ -25,6 +25,9 @@ import "assets/scss/material-kit-react.scss?v=1.7.0";
 // pages for this product
 import Components from "views/Components/Components.jsx";
 import LandingPage from "views/LandingPage/LandingPage.jsx";
+import HomePage from "views/HomePage/HomePage.jsx";
+import Album from "views/Album/Album.jsx";
+import Data from "views/Album/Data.jsx";
 import ProfilePage from "views/ProfilePage/ProfilePage.jsx";
 import LoginPage from "views/LoginPage/LoginPage.jsx";
 
@@ -34,6 +37,9 @@ ReactDOM.render(
   <Router history={hist}>
     <Switch>
       <Route path="/landing-page" component={LandingPage} />
+      <Route path="/home-page" component={HomePage} />
+      <Route path="/album" component={Album} />
+      <Route path="/data" component={Data} />
       <Route path="/profile-page" component={ProfilePage} />
       <Route path="/login-page" component={LoginPage} />
       <Route path="/" component={Components} />
