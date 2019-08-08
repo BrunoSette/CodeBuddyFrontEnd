@@ -3,7 +3,7 @@ import CardList from "../../components/CardList";
 import Header from "../../components/Header/Header";
 import Footer from "../../components/Footer/Footer";
 
-class Data extends Component {
+class Home extends Component {
   constructor() {
     super();
     this.state = {
@@ -36,4 +36,4 @@ class Data extends Component {
   }
 }
 
-export default Data;
+export default Home;
