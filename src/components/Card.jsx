@@ -1,7 +1,5 @@
 // eslint-disable-next-line no-unused-vars
 import React from "react";
-// import { makeStyles } from "@material-ui/core/styles";
-// import Box from "@material-ui/core/Box";
 import Card from "@material-ui/core/Card";
 import CardHeader from "@material-ui/core/CardHeader";
 import CardMedia from "@material-ui/core/CardMedia";
@@ -14,8 +12,6 @@ import Typography from "@material-ui/core/Typography";
 import FavoriteIcon from "@material-ui/icons/Favorite";
 import ShareIcon from "@material-ui/icons/Share";
 import MoreVertIcon from "@material-ui/icons/MoreVert";
-import { flexbox } from "@material-ui/system";
-import Container from "@material-ui/core/Container";
 
 const mediaStyle = {
   height: 0,
@@ -23,22 +19,24 @@ const mediaStyle = {
 };
 
 const containerAll = {
-  display: "flex",
-  flexbox: "row"
-};
-const cardStyle = {
   maxWidth: 345,
-  margin: 10
+  minWidth: 345,
+  margin: 6
 };
 
 const roomCard = ({ description, image, language, name, link, publisher }) => {
   return (
-    <Container style={containerAll}>
-      <Card style={cardStyle}>
+    <div style={containerAll}>
+      <Card>
         <CardHeader
           avatar={
             <Avatar aria-label="recipe">
-              <img src={image} height="40" width="40" alt={description} />
+              <img
+                src={"https://avatars0.githubusercontent.com/u/5710346?v=4"}
+                height="40"
+                width="40"
+                alt={description}
+              />
             </Avatar>
           }
           action={
@@ -56,9 +54,7 @@ const roomCard = ({ description, image, language, name, link, publisher }) => {
         />
         <CardContent>
           <Typography variant="body2" color="textSecondary" component="p">
-            This impressive paella is a perfect party dish and a fun meal to
-            cook together with your guests. Add 1 cup of frozen peas along with
-            the mussels, if you like.
+            {description}
           </Typography>
         </CardContent>
         <CardActions disableSpacing>
@@ -71,7 +67,7 @@ const roomCard = ({ description, image, language, name, link, publisher }) => {
           </IconButton>
         </CardActions>
       </Card>
-    </Container>
+    </div>
   );
 };
 

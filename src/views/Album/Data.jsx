@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import CardList from "../../components/CardList";
 import Header from "../../components/Header/Header";
 import Footer from "../../components/Footer/Footer";
-import Box from "@material-ui/core/Box";
 
 class Data extends Component {
   constructor() {
@@ -26,13 +25,11 @@ class Data extends Component {
 
   render() {
     const rooms = this.state.rooms;
-
+    const styles = { example: { position: "fixed", top: 0 } };
     return (
-      <div className="tc">
-        <Header />
-        <Box display="flex" flexDirection="row">
-          <CardList rooms={rooms} />
-        </Box>
+      <div>
+        <Header title="Example" style={styles.example} />
+        <CardList rooms={rooms} />
         <Footer />
       </div>
     );

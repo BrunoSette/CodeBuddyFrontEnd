@@ -4,7 +4,7 @@ import Card from "./Card";
 
 const CardList = ({ rooms }) => {
   return (
-    <div>
+    <div style={{ display: "flex", height: "100%", flexWrap: "wrap" }}>
       {rooms.map((description, i) => {
         return (
           <Card
