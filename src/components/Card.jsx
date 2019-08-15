@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 // eslint-disable-next-line no-unused-vars
 import React from "react";
 import Card from "@material-ui/core/Card";
@@ -12,30 +13,56 @@ import Typography from "@material-ui/core/Typography";
 import FavoriteIcon from "@material-ui/icons/Favorite";
 import ShareIcon from "@material-ui/icons/Share";
 import MoreVertIcon from "@material-ui/icons/MoreVert";
+import Box from "@material-ui/core/Box";
+import Moment from "react-moment";
+import "moment-timezone";
+import Chip from "@material-ui/core/Chip";
 
 const mediaStyle = {
-  height: 0,
+  height: 140,
   paddingTop: "56.25%" // 16:9
 };
 
 const containerAll = {
   maxWidth: 345,
   minWidth: 345,
-  margin: 6
+  margin: 6,
+  cursor: "pointer"
 };
 
-const roomCard = ({ description, image, language, name, link, publisher }) => {
+const cardStyle = {
+  height: "100%"
+};
+
+const cardActionsStyle = {
+  alignItems: "flex-end",
+  marginBottom: 15,
+  marginTop: "auto"
+};
+
+const roomCard = ({
+  description,
+  schedule,
+  image,
+  language,
+  name,
+  link,
+  publisher,
+  begining,
+  tags
+}) => {
   return (
     <div style={containerAll}>
-      <Card>
+      <Card style={cardStyle}>
+        <CardMedia style={mediaStyle} image={image} title={description} />
         <CardHeader
           avatar={
             <Avatar aria-label="recipe">
               <img
-                src={"https://avatars0.githubusercontent.com/u/5710346?v=4"}
+                src={"https://loremflickr.com/40/40/random=1"}
                 height="40"
                 width="40"
-                alt={description}
+                alt={publisher}
               />
             </Avatar>
           }
@@ -44,20 +71,33 @@ const roomCard = ({ description, image, language, name, link, publisher }) => {
               <MoreVertIcon />
             </IconButton>
           }
-          title={description}
+          title={publisher}
           subheader={name}
         />
-        <CardMedia
-          style={mediaStyle}
-          image="https://hackernoon.com/hn-images/1*h8d-4wYLN9wwiEsLAA_5yg.jpeg"
-          title="Paella dish"
-        />
         <CardContent>
-          <Typography variant="body2" color="textSecondary" component="p">
-            {description}
+          {/* <Typography variant="body2" color="textSecondary" component="p"> */}
+          <Typography variant="h5" color="textPrimary" component="p">
+            <Box fontWeight="fontWeightBold" fontSize={28}>
+              {description}
+            </Box>
           </Typography>
+          <Typography variant="h6" color="textSecondary" component="p">
+            Starting at <Moment parse="YY-MM-DD HH:mm">{begining}</Moment>
+          </Typography>
+          <Typography
+            variant="h7"
+            color="textPrimary"
+            component="p"
+          ></Typography>
+          <Chip
+            variant="outlined"
+            size="small"
+            color="primary"
+            label={tags.join(", ")}
+          />
         </CardContent>
-        <CardActions disableSpacing>
+
+        <CardActions disableSpacing style={cardActionsStyle}>
           <IconButton aria-label="add to favorites">
             <FavoriteIcon />
           </IconButton>

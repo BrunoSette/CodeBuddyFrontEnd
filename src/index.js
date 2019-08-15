@@ -23,11 +23,13 @@ import { Router, Route, Switch } from "react-router-dom";
 import "assets/scss/material-kit-react.scss?v=1.7.0";
 
 // pages for this product
-import Components from "views/Components/Components.jsx";
 import LandingPage from "views/LandingPage/LandingPage.jsx";
 import HomePage from "views/HomePage/HomePage.jsx";
 import Album from "views/Album/Album.jsx";
 import Home from "views/Home/Home.jsx";
+import Signup from "views/Home/Signup.jsx";
+import CreateRoom from "views/Home/CreateRoom.jsx";
+import Signin from "views/Home/Signin.jsx";
 import ProfilePage from "views/ProfilePage/ProfilePage.jsx";
 import LoginPage from "views/LoginPage/LoginPage.jsx";
 
@@ -40,6 +42,9 @@ ReactDOM.render(
       <Route path="/home-page" component={HomePage} />
       <Route path="/album" component={Album} />
       <Route path="/home" component={Home} />
+      <Route path="/signin" component={Signin} />
+      <Route path="/signup" component={Signup} />
+      <Route path="/createroom" component={CreateRoom} />
       <Route path="/profile-page" component={ProfilePage} />
       <Route path="/login-page" component={LoginPage} />
       <Route path="/" component={Home} />

@@ -2,6 +2,7 @@
 import React from "react";
 import Card from "./Card";
 
+// eslint-disable-next-line react/prop-types
 const CardList = ({ rooms }) => {
   return (
     <div style={{ display: "flex", height: "100%", flexWrap: "wrap" }}>
@@ -15,6 +16,9 @@ const CardList = ({ rooms }) => {
             image={rooms[i].image}
             link={rooms[i].link}
             language={rooms[i].language}
+            schedule={rooms[i].schedule}
+            begining={rooms[i].begining}
+            tags={rooms[i].tags}
           />
         );
       })}

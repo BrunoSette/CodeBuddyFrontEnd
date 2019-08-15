@@ -65,7 +65,7 @@ export default function Album() {
   return (
     <React.Fragment>
       <CssBaseline />
-      <AppBar position="relative">
+      <AppBar position="sticky">
         <Toolbar>
           <CameraIcon className={classes.icon} />
           <Typography variant="h6" color="inherit" noWrap>

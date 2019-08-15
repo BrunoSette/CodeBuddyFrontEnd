@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import CardList from "../../components/CardList";
 import Header from "../../components/Header/Header";
 import Footer from "../../components/Footer/Footer";
+import Top from "../Top/Top";
 
 class Home extends Component {
   constructor() {
@@ -29,6 +30,7 @@ class Home extends Component {
     return (
       <div>
         <Header title="Example" style={styles.example} />
+        <Top />
         <CardList rooms={rooms} />
         <Footer />
       </div>
