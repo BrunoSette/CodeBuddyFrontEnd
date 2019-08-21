@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 import React from "react";
 // import React, { useState, useEffect } from "react";
 import Avatar from "@material-ui/core/Avatar";

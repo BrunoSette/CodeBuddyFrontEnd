@@ -1,5 +1,5 @@
-import React from "react";
-// import React, { useState, useEffect } from "react";
+/* eslint-disable no-console */
+import React, { useState } from "react";
 import Avatar from "@material-ui/core/Avatar";
 import Button from "@material-ui/core/Button";
 import CssBaseline from "@material-ui/core/CssBaseline";
@@ -11,7 +11,7 @@ import LockOutlinedIcon from "@material-ui/icons/LockOutlined";
 import { makeStyles } from "@material-ui/core/styles";
 import Container from "@material-ui/core/Container";
 import { useFormState } from "react-use-form-state";
-import { Router, Route, Switch } from "react-router-dom";
+import Snackbar from "../../components/Snackbar/SnackbarContent";
 
 const useStyles = makeStyles(theme => ({
   "@global": {
@@ -40,10 +40,11 @@ const useStyles = makeStyles(theme => ({
 
 export default function SignUpForm() {
   const [formState, { text, email, password }] = useFormState();
+  const [errorMessage, seterrorMessage] = useState(null);
+
   const classes = useStyles();
 
   function handleSubmit() {
-    // const log = () => console.log(formState)
     var proxyUrl = "https://cors-anywhere.herokuapp.com/",
       targetUrl =
         "https://63uxgjbrf0.execute-api.us-east-1.amazonaws.com/dev/user";
@@ -56,9 +57,11 @@ export default function SignUpForm() {
         password: formState.values["password"]
       })
     })
-      .then(console.log(formState.values["name"]))
-      .then(this.history.push("/createroom"))
-
+      .then(message =>
+        message.status === 422
+          ? seterrorMessage(true)
+          : console.log(message.status)
+      )
       .catch(function(error) {
         console.log(
           "There has been a problem with your fetch operation: " + error.message
@@ -68,6 +71,17 @@ export default function SignUpForm() {
 
   return (
     <Container component="main" maxWidth="xs">
+      {errorMessage ? (
+        <Snackbar
+          // message={message}
+          message="ERROR: The email address already exists. Continue with login?"
+          color="danger"
+          close={true}
+          icon="error"
+        />
+      ) : (
+        ""
+      )}
       <CssBaseline />
       <div className={classes.paper}>
         <Avatar className={classes.avatar}>
