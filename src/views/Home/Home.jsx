@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import CardList from "../../components/CardList/CardList";
 import Header from "../../components/Header/Header";
 import Footer from "../../components/Footer/Footer";
-import Top from "../Top/Top";
+import Top from "./Top";
 
 class Home extends Component {
   constructor() {
