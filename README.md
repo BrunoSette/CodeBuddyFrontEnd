@@ -63,7 +63,16 @@ Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 The page will reload if you make edits.<br>
 You will also see any lint errors in the console.
 
-### `yarn test`
+## TODOs
 
-Launches the test runner in the interactive watch mode.<br>
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- [X] Create home page
+- [X] Create signup page
+- [X] Create login page
+- [X] Deploy in https://zeit.co
+- [ ] Redirect to Create Room after sign up
+- [ ] Review website texts
+- [ ] Create search for rooms
+- [ ] Update login page
+- [ ] Update create room page
+ 
+
