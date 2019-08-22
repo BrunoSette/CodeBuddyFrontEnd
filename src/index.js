@@ -10,16 +10,19 @@ import Signup from "views/Home/Signup.jsx";
 import CreateRoom from "views/Home/CreateRoom.jsx";
 import Signin from "views/Home/Signin.jsx";
 import ProfilePage from "views/ProfilePage/ProfilePage.jsx";
+import LoginPage from "views/LoginPage/LoginPage.jsx";
 
 var hist = createBrowserHistory();
 
 ReactDOM.render(
   <Router history={hist}>
     <Switch>
+      <Route path="/home" component={Home} />
       <Route path="/signin" component={Signin} />
       <Route path="/signup" component={Signup} />
       <Route path="/createroom" component={CreateRoom} />
       <Route path="/profile-page" component={ProfilePage} />
+      <Route path="/login-page" component={LoginPage} />
       <Route path="/" component={Home} />
     </Switch>
   </Router>,

@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import CardList from "../../components/CardList";
+import CardList from "../../components/CardList/CardList";
 import Header from "../../components/Header/Header";
 import Footer from "../../components/Footer/Footer";
 import Top from "../Top/Top";

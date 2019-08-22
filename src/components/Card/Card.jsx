@@ -1,53 +1,112 @@
-/*!
-
-=========================================================
-* Material Kit React - v1.7.0
-=========================================================
-
-* Product Page: https://www.creative-tim.com/product/material-kit-react
-* Copyright 2019 Creative Tim (https://www.creative-tim.com)
-* Licensed under MIT (https://github.com/creativetimofficial/material-kit-react/blob/master/LICENSE.md)
-
-* Coded by Creative Tim
-
-=========================================================
-
-* The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
-
-*/
+/* eslint-disable react/prop-types */
+// eslint-disable-next-line no-unused-vars
 import React from "react";
-// nodejs library that concatenates classes
-import classNames from "classnames";
-// nodejs library to set properties for components
-import PropTypes from "prop-types";
-// @material-ui/core components
-import withStyles from "@material-ui/core/styles/withStyles";
-// @material-ui/icons
+import Card from "@material-ui/core/Card";
+import CardHeader from "@material-ui/core/CardHeader";
+import CardMedia from "@material-ui/core/CardMedia";
+import CardContent from "@material-ui/core/CardContent";
+import CardActions from "@material-ui/core/CardActions";
+import Avatar from "@material-ui/core/Avatar";
+import Badge from "@material-ui/core/Badge";
+import IconButton from "@material-ui/core/IconButton";
+import Typography from "@material-ui/core/Typography";
+import FavoriteIcon from "@material-ui/icons/Favorite";
+import ShareIcon from "@material-ui/icons/Share";
+import MoreVertIcon from "@material-ui/icons/MoreVert";
+import Box from "@material-ui/core/Box";
+import Moment from "react-moment";
+import "moment-timezone";
+import Chip from "@material-ui/core/Chip";
 
-// core components
-import cardStyle from "assets/jss/material-kit-react/components/cardStyle.jsx";
-
-function Card({ ...props }) {
-  const { classes, className, children, plain, carousel, ...rest } = props;
-  const cardClasses = classNames({
-    [classes.card]: true,
-    [classes.cardPlain]: plain,
-    [classes.cardCarousel]: carousel,
-    [className]: className !== undefined
-  });
-  return (
-    <div className={cardClasses} {...rest}>
-      {children}
-    </div>
-  );
-}
-
-Card.propTypes = {
-  classes: PropTypes.object.isRequired,
-  className: PropTypes.string,
-  plain: PropTypes.bool,
-  carousel: PropTypes.bool,
-  children: PropTypes.node
+const mediaStyle = {
+  height: 140,
+  paddingTop: "56.25%" // 16:9
 };
 
-export default withStyles(cardStyle)(Card);
+const containerAll = {
+  maxWidth: 345,
+  minWidth: 345,
+  margin: 6,
+  cursor: "pointer"
+};
+
+const cardStyle = {
+  height: "100%"
+};
+
+const cardActionsStyle = {
+  alignItems: "flex-end",
+  marginBottom: 15,
+  marginTop: "auto"
+};
+
+const roomCard = ({
+  description,
+  // schedule,
+  image,
+  // language,
+  name,
+  // link,
+  publisher,
+  begining,
+  tags
+}) => {
+  return (
+    <div style={containerAll}>
+      <Card style={cardStyle}>
+        <CardMedia style={mediaStyle} image={image} title={description} />
+        <CardHeader
+          avatar={
+            <Avatar aria-label="recipe">
+              <img
+                src="https://github.com/brunosette.png?size=40"
+                alt={publisher}
+              />
+            </Avatar>
+          }
+          action={
+            <IconButton aria-label="settings">
+              <MoreVertIcon />
+            </IconButton>
+          }
+          title={publisher}
+          subheader={name}
+        />
+        <CardContent>
+          {/* <Typography variant="body2" color="textSecondary" component="p"> */}
+          <Typography variant="h5" color="textPrimary" component="p">
+            <Box fontWeight="fontWeightBold" fontSize={28}>
+              {description}
+            </Box>
+          </Typography>
+          <Typography variant="h6" color="textSecondary" component="p">
+            Starting at <Moment parse="YY-MM-DD HH:mm">{begining}</Moment>
+          </Typography>
+          <Typography
+            variant="h7"
+            color="textPrimary"
+            component="p"
+          ></Typography>
+          <Chip
+            variant="outlined"
+            size="small"
+            color="primary"
+            label={tags.join(", ")}
+          />
+        </CardContent>
+
+        <CardActions disableSpacing style={cardActionsStyle}>
+          <IconButton aria-label="add to favorites">
+            <FavoriteIcon />
+          </IconButton>
+          <IconButton aria-label="share">
+            <Badge />
+            <ShareIcon />
+          </IconButton>
+        </CardActions>
+      </Card>
+    </div>
+  );
+};
+
+export default roomCard;

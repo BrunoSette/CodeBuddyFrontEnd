@@ -1,6 +1,6 @@
 /* eslint-disable no-unused-vars */
 import React from "react";
-import Card from "./Card";
+import Card from "../Card/Card";
 
 // eslint-disable-next-line react/prop-types
 const CardList = ({ rooms }) => {
