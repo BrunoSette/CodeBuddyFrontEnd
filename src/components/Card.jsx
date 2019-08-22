@@ -42,11 +42,11 @@ const cardActionsStyle = {
 
 const roomCard = ({
   description,
-  schedule,
+  // schedule,
   image,
-  language,
+  // language,
   name,
-  link,
+  // link,
   publisher,
   begining,
   tags
@@ -59,9 +59,7 @@ const roomCard = ({
           avatar={
             <Avatar aria-label="recipe">
               <img
-                src={"https://loremflickr.com/40/40/random=1"}
-                height="40"
-                width="40"
+                src="https://github.com/brunosette.png?size=40"
                 alt={publisher}
               />
             </Avatar>
