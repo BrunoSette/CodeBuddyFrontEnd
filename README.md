@@ -1,21 +1,17 @@
 # Coding Buddie 
 
 
- ![version](https://img.shields.io/badge/version-1.7.0-blue.svg) [![GitHub issues open](https://img.shields.io/github/issues/creativetimofficial/material-kit-react.svg?maxAge=2592000)](https://github.com/BrunoSette/CodeBuddyFrontEnd/issues?q=is%3Aopen+is%3Aissue) [![GitHub issues closed](https://img.shields.io/github/issues-closed-raw/BrunoSette/CodeBuddyFrontEnd.svg?maxAge=2592000)](https://github.com/BrunoSette/CodeBuddyFrontEnd/issues?q=is%3Aissue+is%3Aclosed)
-
 ## Requirements
 
 - Git should be installed [Install Git](https://git-scm.com/downloads)
-- Nodejs [Install Nodejs](https://nodejs.org/en/download/). **Notice v11.11.0 breaks the tests**
+- Nodejs [Install Nodejs](https://nodejs.org/en/download/).
 - Yarn (we recommend using yarn as a package manager) [Install Yarn](https://yarnpkg.com/en/)
 
 ## Quick start
 
-- `npm i material-kit-react`
-- [Download from Github](https://github.com/creativetimofficial/material-kit-react/archive/master.zip).
-- [Download from Creative Tim](https://www.creative-tim.com/product/material-kit-react).
-- Install with [Bower](https://bower.io/): ```bower install material-kit-react```.
-- Clone the repo: `git clone https://github.com/creativetimofficial/material-kit-react.git`.
+- Clone the repo: `git clone https://github.com/BrunoSette/CodeBuddyFrontEnd.git`.
+- Get in the folder: `cd CodeBuddyFrontEnd`
+- Start the App: `yarn start`
 
 
 ### Workflow
@@ -23,8 +19,8 @@
 This section describes the workflow we are going to follow when working in a new feature or fixing a bug. If you want to contribute, please follow these steps:
 
 1. Fork this project
-2. Clone the forked project to your local environment, for example: `git clone git@github.com:crysfel/coding-coach-front-end.git` (Make sure to replace the URL to your own repository).
-3. Add the original project as a remote, for this example the name is `upstream`, feel free to use whatever name you want. `git remote add upstream https://github.com/Coding-Coach/find-a-mentor.git`.
+2. Clone the forked project to your local environment, for example: `git clone git@github.com:BrunoSette/CodeBuddyFrontEnd.git` (Make sure to replace the URL to your own repository).
+3. Add the original project as a remote, for this example the name is `upstream`, feel free to use whatever name you want. `git remote add upstream https://github.com/BrunoSette/CodeBuddyFrontEnd.git`.
 
 Forking the project will create a copy of that project in your own GitHub account, you will commit your work against your own repository.
 
