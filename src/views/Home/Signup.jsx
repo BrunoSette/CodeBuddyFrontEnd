@@ -74,10 +74,16 @@ export default function SignUpForm() {
       {errorMessage ? (
         <Snackbar
           // message={message}
-          message="ERROR: The email address already exists. Continue with login?"
+          message={
+            <span>
+              <b>
+                ERROR: The email address already exists. Continue with login?
+              </b>
+            </span>
+          }
+          close
           color="danger"
-          close={true}
-          icon="error"
+          icon="info_outline"
         />
       ) : (
         ""
@@ -134,6 +140,7 @@ export default function SignUpForm() {
           </Grid>
           <Button
             type="button"
+            // type="submit"
             fullWidth
             variant="contained"
             color="primary"
